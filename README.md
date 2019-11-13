@@ -6,7 +6,7 @@ This is an extract from the live source of [Bvckup 2](https://bvckup2.com). It's
 
 ## Quick intro
 
-Given two processes that use the same data model and exchange parts of it with each other, this library helps packing/unpacking live data structures to/from binary blobs with *as little fuss as possible*.
+Given two processes that use the same data model and exchange parts of it with each other, this library helps packing and unpacking live data structures to/from binary blobs with *as little fuss as possible*.
 
 No separate schemas, no precompilation, no verbose description of protocols, etc.
 
