@@ -1,6 +1,6 @@
 # Serializer++
 
-Small, light and easy to follow data serialization library for C++.
+Small, light and easy to understand data serialization library for C++.
 
 This is an extract from the live source of [Bvckup 2](https://bvckup2.com). It's not meant to be an universal serialization library, but rather a real-life working example of one of many ways to do serialization. Doing it *simply* at that.
 
@@ -103,15 +103,15 @@ Magic.
 
 ## Caveats
 
-A quick list of caveats due to how the library is used in our code:
+A quick list of cases that aren't supported by the library:
 
 1. Classes with complicated inheritance, members that are references, pointers, etc., i.e. cases that require some sort of pre- or post-processing when instantiating an object.
 
-2. Classes that use getters and setters. Not hard to support with a bit of extra code.
+2. Classes that use getters and setters. Not hard to accommodate with a bit of extra code.
 
-3. Serializing into a tagged format, like JSON or XML. Can be supported by capturing field names.
+3. Serializing into a tagged format, like JSON or XML. Can be supported by capturing field names in `member_ptr`.
 
-4. Storing integers in a network byte order. Again, very easy to support, but a pointless thing to do for [IPC](https://en.wikipedia.org/wiki/Inter-process_communication) within the same host, which is what we have.
+4. Storing integers in a network byte order. This too is very easy to support, but a pointless thing to do for [IPC](https://en.wikipedia.org/wiki/Inter-process_communication) within the same host, which is what we have.
 
 ## Footnotes
 
