@@ -84,7 +84,7 @@ It is also too verbose. Both functions will end up looking _almost_ the same, ex
 
 It's C++, the most overpowered language in existence. We can do better.
 
-Enter [serialize_obj.h]()
+Enter [serialize_obj.h](https://github.com/apankrat/cpp-serializer/blob/master/serialize_obj.h)
 
 Through a combination of [pointers to members](https://isocpp.org/wiki/faq/pointers-to-members), [variadic templates](https://eli.thegreenplace.net/2014/variadic-templates-in-c/) and a modest sprinkle of macros it coerces the compiler into auto-generating `store` and `parse` overloads from a plain list of struct members.
 
