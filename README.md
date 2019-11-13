@@ -74,7 +74,7 @@ It knows how to serialize `string`, `wstring` or any other specialization of `st
 
 It knows how to serialize `vector`, `set` and `map` and it can be easily extended to support other container types like `list` and `deque`.
 
-However, in order to serialize a container, it obviously needs to know how to store/parse the elements contained within. If they are of known types, e.g. `bool`, then we are good. But if they are custom types, then we need to teach the library how to handle them.
+However, in order to serialize a container, it obviously needs to know how to store/parse the elements contained within. If they are of a known type, e.g. `bool`, then we are good. But if their type is a class or a struct, then we need to teach the library how to handle them.
 
 ## Serializing structs
 
@@ -103,15 +103,15 @@ Magic.
 
 ## Caveats
 
-Our application code doesn't need any of the following, so neither is supported by the library. It's not hard to add this support however if needs be:
+A quick list of caveats due to how the library is used in our code:
 
 1. Classes with complicated inheritance, members that are references, pointers, etc., i.e. cases that require some sort of pre- or post-processing when instantiating an object.
 
-2. Classes that use getters and setters.
+2. Classes that use getters and setters. Not hard to support with a bit of extra code.
 
-3. Serializing into a tagged format, like JSON or XML. Trivial to support though by capturing field names.
+3. Serializing into a tagged format, like JSON or XML. Can be supported by capturing field names.
 
-4. Storing integers in a network byte order. Again, trivial to support, but a pointless thing to do for [IPC](https://en.wikipedia.org/wiki/Inter-process_communication) withing the same host, which is what we have.
+4. Storing integers in a network byte order. Again, very easy to support, but a pointless thing to do for [IPC](https://en.wikipedia.org/wiki/Inter-process_communication) within the same host, which is what we have.
 
 ## Footnotes
 
