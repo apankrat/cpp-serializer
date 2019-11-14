@@ -18,9 +18,10 @@
 
 struct foo
 {
-	bool         maybe;
-	std::string  label;
-	uint16_t     value;
+	bool         val_b;
+	std::string  val_s;
+	uint16_t     val_u;
+	double       val_d;
 };
 
 struct bar
@@ -33,9 +34,10 @@ struct bar
  *	2. Specify which fields to serialize
  */
 OBJECT_SPEC( foo   )
-	__f( maybe ),
-	__f( label ),
-	__f( value )
+	__f( val_b ),
+	__f( val_s ),
+	__f( val_u ),
+	__f( val_d )
 END_OF_SPEC
 
 OBJECT_SPEC( bar )

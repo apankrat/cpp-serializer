@@ -47,14 +47,16 @@ inline void store(buffer & buf, const uint8_t  & v) { store_simple(buf, v); }
 inline void store(buffer & buf, const uint16_t & v) { store_simple(buf, v); }
 inline void store(buffer & buf, const uint32_t & v) { store_simple(buf, v); }
 inline void store(buffer & buf, const uint64_t & v) { store_simple(buf, v); }
-inline void store(buffer & buf, const int64_t  & v) { store_simple(buf, v); }
+inline void store(buffer & buf, const float    & v) { store_simple(buf, v); }
+inline void store(buffer & buf, const double   & v) { store_simple(buf, v); }
 
-inline bool parse(parser & buf, bool     & v) { return parse_simple(buf, v); }
-inline bool parse(parser & buf, uint8_t  & v) { return parse_simple(buf, v); }
-inline bool parse(parser & buf, uint16_t & v) { return parse_simple(buf, v); }
-inline bool parse(parser & buf, uint32_t & v) { return parse_simple(buf, v); }
-inline bool parse(parser & buf, uint64_t & v) { return parse_simple(buf, v); }
-inline bool parse(parser & buf, int64_t  & v) { return parse_simple(buf, v); }
+inline bool parse(parser & par, bool     & v) { return parse_simple(par, v); }
+inline bool parse(parser & par, uint8_t  & v) { return parse_simple(par, v); }
+inline bool parse(parser & par, uint16_t & v) { return parse_simple(par, v); }
+inline bool parse(parser & par, uint32_t & v) { return parse_simple(par, v); }
+inline bool parse(parser & par, uint64_t & v) { return parse_simple(par, v); }
+inline bool parse(parser & par, float    & v) { return parse_simple(par, v); }
+inline bool parse(parser & par, double   & v) { return parse_simple(par, v); }
 
 /*
  *	arrays
@@ -144,7 +146,7 @@ bool parse(parser & par, std::pair<T1,T2> & v)
  *	containers
  */
 template <typename C>
-void store_container2(buffer & buf, const C & v)
+void store_container(buffer & buf, const C & v)
 {
 	store_size(buf, v.size());
 	for (auto & x : v) store(buf, x);
@@ -157,7 +159,7 @@ template <typename T, typename A>
 //inline 
 void store(buffer & buf, const std::vector<T,A> & v)
 {
-	return store_container2(buf, v);
+	return store_container(buf, v);
 }
 
 template <typename T, typename A>
@@ -190,7 +192,7 @@ template <typename K, typename C, typename A>
 //inline 
 void store(buffer & buf, const std::set<K,C,A> & v)
 {
-	return store_container2(buf, v);
+	return store_container(buf, v);
 }
 
 template <typename K, typename C, typename A>
@@ -222,7 +224,7 @@ template <typename K, typename D, typename C, typename A>
 //inline 
 void store(buffer & buf, const std::map<K,D,C,A> & v)
 {
-	return store_container2(buf, v);
+	return store_container(buf, v);
 }
 
 template <typename K, typename D, typename C, typename A>
