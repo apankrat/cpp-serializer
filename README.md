@@ -115,5 +115,5 @@ A quick list of cases that aren't supported by the library:
 
 ## Footnotes
 
-For a similar, but a bit more generic library see https://github.com/eliasdaler/MetaStuff
-
+For a similarly light, but a bit more generic library see [MetaStuff](https://github.com/eliasdaler/MetaStuff).
+Another option is [cereal](https://github.com/USCiLab/cereal), which is heavier, but similar in idea as well.
