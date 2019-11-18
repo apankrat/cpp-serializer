@@ -117,6 +117,6 @@ A quick list of cases that aren't supported by the library:
 
 For a similarly light, but a bit more generic library see [MetaStuff](https://github.com/eliasdaler/MetaStuff).
 
-Second option is [Yet Another Serializer](https://github.com/niXman/yas) - same idea, a bit heavier.
+Second option is [Yet Another Serialization](https://github.com/niXman/yas) - same idea, a bit heavier.
 
 Third option is [cereal](https://github.com/USCiLab/cereal), which is considerably heavier and a bit more verbose in use, but similar in idea as well.
