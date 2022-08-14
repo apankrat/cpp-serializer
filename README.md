@@ -47,7 +47,7 @@ foo     inbound;
 par.init(buf);
 parse(par, inbound);
 
-assert( parse.eof() );
+assert( par.eof() );
 ```
 
 ## How it works
